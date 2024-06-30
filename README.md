@@ -22,6 +22,8 @@ This is the API for BeanTown-tini
     }
 }
 ```
+### DELETE /signup with Authorization
+Deletes the account
 ### POST /login
 ```
 {
