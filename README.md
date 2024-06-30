@@ -1,25 +1,54 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 # beantowntini-api
+This is the API for BeanTown-tini
+## Devise endpoints for User
+### POST /signup
+```
+{
+    "user": {
+        "email": "test@test.com",
+        "password": "123456",
+        "name": "John"
+    }
+}
+{
+    "status": {
+        "code": 200,
+        "message": "Signed up successfully."
+    },
+    "data": {
+        "id": 1,
+        "email": "test@test.com",
+        "name": "John"
+    }
+}
+```
+### POST /login
+```
+{
+    "user": {
+        "email": "test@test.com",
+        "password": "123456"
+    }
+}
+{
+    "status": {
+        "code": 200,
+        "message": "Logged in successfully.",
+        "data": {
+            "user": {
+                "id": 1,
+                "email": "test@test.com",
+                "name": "John"
+            }
+        }
+    }
+}
+```
+### DELETE /logout
+Add JWT token to Authorization in Header
+```
+{
+    "status": 200,
+    "message": "Logged out successfully."
+}
+```
